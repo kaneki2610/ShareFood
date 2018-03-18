@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        app:showAsAction="always"
+        android:title="Tìm kiếm"
+        android:icon="@drawable/itemblack_05"
+        ></item>
+    <item
+        app:showAsAction="always"
+        android:title="menu"
+        android:icon="@mipmap/ic_more_vert_white_36dp"
+        >
+        <menu>
+            <item
+                android:title="Đăng nhập"
+               android:icon="@drawable/icon_12"
+                ></item>
+
+            <item
+                android:title="Thông báo"
+                android:icon="@mipmap/ic_add_alert_black_24dp"
+                ></item>
+            <item
+                android:title="Hướng dẫn"
+                android:icon="@mipmap/ic_mood_black_24dp"
+                ></item>
+            <item
+                android:title="Cài đặt"
+                android:icon="@mipmap/ic_settings_black_24dp"
+                ></item>
+        </menu>
+    </item>
+</menu>

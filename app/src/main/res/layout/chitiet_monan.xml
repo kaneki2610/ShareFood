@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbarChiTiet"
+    android:background="@color/colortoolbarchitiet"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize">
+
+</android.support.v7.widget.Toolbar>
+  <ImageView
+      android:layout_marginTop="30dp"
+      android:layout_gravity="center"
+      android:src="@drawable/pho_03"
+      android:layout_width="160dp"
+      android:layout_height="160dp" />
+   <TextView
+       android:fontFamily="@font/robotoregular"
+       android:textSize="20sp"
+      android:layout_gravity="center"
+       android:text="Phở gà"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_marginLeft="7dp"
+            android:background="#fff"
+          android:src="@mipmap/comment"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <TextView
+            android:layout_marginLeft="7dp"
+          android:layout_gravity="center"
+            android:text="26 bình luận"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageButton
+            android:layout_marginLeft="7dp"
+            android:background="#fff"
+           android:src="@mipmap/favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="7dp"
+            android:layout_gravity="center"
+            android:text="26 bình luận"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="15dp"
+        android:background="#BFb3a6a6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <TabHost
+        android:id="@+id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                  >
+                      <LinearLayout
+
+                          android:layout_marginLeft="5dp"
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="match_parent">
+                          <TextView
+                              android:text="-Gà xé nhỏ :200gr"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content" />
+                          <TextView
+                              android:text="-Hành tím :1 củ"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content" />
+                          <TextView
+                              android:text="-Hành tím :1 củ"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content" />
+                          <TextView
+                              android:text="-Hành tím :1 củ"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content" />
+                      </LinearLayout>
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:text="Gia vị"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="Gia vị"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="Gia vị"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="Gia vị"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:text="Miến phở :200gr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="Miến phở :200gr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="Miến phở :200gr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:text="Tỏi,hành tím lột vỏ,đâm nhuyễn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="Hành tây rửa sặt,thái múi cau"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="Gà rửa sặt ,sau đó xé từng miếng nhỏ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:text="ccc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/tab4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:text="dddd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+
+
+</LinearLayout>
