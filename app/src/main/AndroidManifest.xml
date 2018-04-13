@@ -9,14 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".CategoriesActivity">
 
         </activity>
-        <activity android:name=".ChiTietMonAn">
+        <activity android:name=".ProductDetailActivity">
 
         </activity>
-        <activity android:name=".LoaiMonAn">
-
+        <activity android:name=".ProductsActivity">
         </activity>
         <activity android:name=".Splashscreen">
             <intent-filter>
@@ -25,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    <activity android:name=".DangNhap">
+    <activity android:name=".LoginActivity">
 
     </activity>
     </application>

@@ -18,44 +18,14 @@ public class Splashscreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
         AnhXa();
-     //   SuLien();
-        Thread t=new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try{
-                    Thread.sleep(3000);
-
-                }catch (Exception e)
-                {
-
-                }finally {
-                    Intent intentTrangChu=new Intent(Splashscreen.this,MainActivity.class);
-                    startActivity(intentTrangChu);
-
-                }
-            }
-        });
-        t.start();
-    }
-
-   /* private void SuLien() {
         btnVaobep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentTrangChu=new Intent(Splashscreen.this,MainActivity.class);
+                Intent intentTrangChu=new Intent(Splashscreen.this,CategoriesActivity.class);
                 startActivity(intentTrangChu);
-
             }
         });
-        btnDangNhap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentDangNhap=new Intent(Splashscreen.this,DangNhap.class);
-                startActivity(intentDangNhap);
-
-            }
-        });
-    }*/
+    }
 
     private void AnhXa() {
         btnVaobep=findViewById(R.id.btnVaobep);

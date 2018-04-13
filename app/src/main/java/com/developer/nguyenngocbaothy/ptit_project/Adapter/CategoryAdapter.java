@@ -1,4 +1,4 @@
-package com.example.dell.ptit_doan;
+package com.developer.nguyenngocbaothy.ptit_project.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,32 +6,35 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.developer.nguyenngocbaothy.ptit_project.Model.Category;
 import com.developer.nguyenngocbaothy.ptit_project.R;
 
 import java.util.List;
+
 
 
 /**
  * Created by HOME on 23-Feb-18.
  */
 
-public class MonAnAdapter extends BaseAdapter {
+public class CategoryAdapter extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private List<MonAn> monAnList;
+    private List<Category> categoryList;
 
-    public MonAnAdapter(Context context, int layout, List<MonAn> monAnList) {
+    public CategoryAdapter(Context context, int layout, List<Category> categoryList) {
         this.context = context;
         this.layout = layout;
-        this.monAnList = monAnList;
+        this.categoryList = categoryList;
     }
 
     @Override
     public int getCount() {
-        return monAnList.size();
+        return categoryList.size();
     }
 
     @Override
@@ -59,13 +62,14 @@ public class MonAnAdapter extends BaseAdapter {
             holder.txtTen = (TextView) convertView.findViewById(R.id.textTen);
             holder.image = (ImageView) convertView.findViewById(R.id.imageIcon);
             convertView.setTag(holder);
+
         }else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        MonAn monan  = monAnList.get(position);
-        holder.txtTen.setText(monan.getTenMonAn());
-        holder.image.setImageResource(monan.getHinh());
+        Category category  = categoryList.get(position);
+        holder.txtTen.setText(category.getName());
+        holder.image.setImageResource(category.getImage());
 
         return convertView;
     }

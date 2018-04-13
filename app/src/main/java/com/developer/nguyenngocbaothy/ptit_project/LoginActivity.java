@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
  * Created by Dell on 3/12/2018.
  */
 
-public class DangNhap extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
