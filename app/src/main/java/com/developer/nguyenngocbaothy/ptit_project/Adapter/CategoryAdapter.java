@@ -15,7 +15,6 @@ import com.developer.nguyenngocbaothy.ptit_project.R;
 import java.util.List;
 
 
-
 /**
  * Created by HOME on 23-Feb-18.
  */
@@ -47,7 +46,7 @@ public class CategoryAdapter extends BaseAdapter {
         return 0;
     }
 
-    private class ViewHolder{
+    private class ViewHolder {
         ImageView image;
         TextView txtTen;
     }
@@ -55,19 +54,19 @@ public class CategoryAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
-        if(convertView == null){
+        if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(layout, null);
             holder = new ViewHolder();
-            holder.txtTen = (TextView) convertView.findViewById(R.id.textTen);
-            holder.image = (ImageView) convertView.findViewById(R.id.imageIcon);
+            holder.txtTen = (TextView) convertView.findViewById(R.id.textTenloai);
+            holder.image = (ImageView) convertView.findViewById(R.id.imageHinhloai);
             convertView.setTag(holder);
 
-        }else {
+        } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        Category category  = categoryList.get(position);
+        Category category = categoryList.get(position);
         holder.txtTen.setText(category.getName());
         holder.image.setImageResource(category.getImage());
 

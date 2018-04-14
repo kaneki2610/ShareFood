@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#fff"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarLoaiMonAn"
-        android:background="@color/colortoolbarchitiet"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colortoolbarchitiet"
+        android:layout_weight="1"></android.support.v7.widget.Toolbar>
 
     <GridView
-
         android:id="@+id/gridview"
         android:layout_width="match_parent"
         android:layout_height="440dp"
@@ -19,18 +21,24 @@
         android:horizontalSpacing="15px"
         android:numColumns="auto_fit"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="15px" />
+        android:verticalSpacing="15px"
+        android:layout_weight="8"/>
 
     <Button
-
-        android:textSize="20sp"
-        android:textColor="#fff"
-        android:fontFamily="@font/font_franchise"
-        android:background="@drawable/footer_18"
-        android:id="@+id/button"
+        android:id="@+id/buttonBepchien"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="BẾP CHIẾN" />
+        android:background="@drawable/footer_18"
+        android:fontFamily="@font/font_franchise"
+        android:text="BẾP CHIẾN"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:layout_weight="1"/>
 
-
+    <ImageView
+        android:id="@+id/imageViewTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
 </LinearLayout>

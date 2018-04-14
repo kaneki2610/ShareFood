@@ -55,10 +55,10 @@ public class CategoriesActivity extends AppCompatActivity {
     }
 
     private void SuKien() {
-        /*myRef.child("Products").push().setValue(new Product("0", "-L9xiWYcdCvYYpEKxhHZ", "Mắm chưng", R.drawable.banhcanhghe_03));
-        myRef.child("Products").push().setValue(new Product("1", "-L9xiWYcdCvYYpEKxhHZ", "Bún bò huế", R.drawable.banhhoi_03));
-        myRef.child("Products").push().setValue(new Product("2", "-L9xiWYcdCvYYpEKxhHZ", "Bánh hỏi", R.drawable.bunbohue_03));
-        myRef.child("Products").push().setValue(new Product("3", "-L9xiWYcdCvYYpEKxhHZ", "Phở gà", R.drawable.chacalavong_03));*/
+        /*myRef.child("Products").push().setValue(new Product("0", "-L9xiWYcdCvYYpEKxhHZ", "Mắm chưng", R.drawable.chacalavong_03));
+        myRef.child("Products").push().setValue(new Product("1", "-L9xiWYcdCvYYpEKxhHZ", "Bún bò huế", R.drawable.bunbohue_03));
+        myRef.child("Products").push().setValue(new Product("2", "-L9xiWYcdCvYYpEKxhHZ", "Bánh hỏi", R.drawable.banhhoi_03));
+        myRef.child("Products").push().setValue(new Product("3", "-L9xiWYcdCvYYpEKxhHZ", "Phở gà", R.drawable.banhcanhghe_03));*/
         lvMonAn.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -77,14 +77,10 @@ public class CategoriesActivity extends AppCompatActivity {
     }
 
     void getCategoriesFirebase() {
-        /*categoriesList.add(new Category(0,"VIỆT NAM", R.drawable.item_11));
-        categoriesList.add(new Category(1,"MÓN Á", R.drawable.item_14));
-        categoriesList.add(new Category(2,"MÓN ÂU", R.drawable.item_16));
-        categoriesList.add(new Category(3,"DESSERT", R.drawable.item_11));*/
-        /*myRef.child("Categories").push().setValue(new Category(0, "Món Việt",R.drawable.item_11));
-        myRef.child("Categories").push().setValue(new Category(1, "Món Á",R.drawable.item_14));
-        myRef.child("Categories").push().setValue(new Category(2, "Món Âu",R.drawable.item_16));
-        myRef.child("Categories").push().setValue(new Category(3, "Món tráng miệng",R.drawable.item_03));*/
+        /*myRef.child("Categories").push().setValue(new Category("0", "Món Việt",R.drawable.item_11));
+        myRef.child("Categories").push().setValue(new Category("1", "Món Á",R.drawable.item_14));
+        myRef.child("Categories").push().setValue(new Category("2", "Món Âu",R.drawable.item_16));
+        myRef.child("Categories").push().setValue(new Category("3", "Món tráng miệng",R.drawable.item_03));*/
         myRef.child("Categories").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

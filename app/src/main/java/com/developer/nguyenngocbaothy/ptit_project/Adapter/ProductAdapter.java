@@ -39,21 +39,21 @@ public class ProductAdapter extends ArrayAdapter<Product> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        ViewHolder viewHolder;
+        ViewHolder holder;
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(this.resource, null);
-            viewHolder = new ViewHolder();
-            viewHolder.img = (ImageView) convertView.findViewById(R.id.imgHinhLoaiMonAn);
-            viewHolder.txt = (TextView) convertView.findViewById(R.id.txtTenMonAn);
-            convertView.setTag(viewHolder);
+            holder = new ViewHolder();
+            holder.img = (ImageView) convertView.findViewById(R.id.imgHinhMonAn);
+            holder.txt = (TextView) convertView.findViewById(R.id.txtTenMonAn);
+            convertView.setTag(holder);
         } else {
-            viewHolder = (ViewHolder) convertView.getTag();
+            holder = (ViewHolder) convertView.getTag();
         }
 
         Product pd = objects.get(position);
-        viewHolder.img.setImageResource(pd.getImage());
-        viewHolder.txt.setText(pd.getName());
+        holder.img.setImageResource(pd.getImage());
+        holder.txt.setText(pd.getName());
 
         return convertView;
     }

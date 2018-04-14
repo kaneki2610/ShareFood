@@ -2,8 +2,11 @@ package com.developer.nguyenngocbaothy.ptit_project;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -13,17 +16,27 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 
 import com.developer.nguyenngocbaothy.ptit_project.Adapter.ProductAdapter;
 import com.developer.nguyenngocbaothy.ptit_project.Model.Product;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +51,8 @@ public class ProductsActivity extends AppCompatActivity {
     Toolbar toolbar;
     DatabaseReference myRef;
     String key;
+    private StorageReference mStorageRef;
+    Button btnBepchien;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -61,13 +76,20 @@ public class ProductsActivity extends AppCompatActivity {
     }
 
     private void SuKien() {
-        /*gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Intent detailProductIntent = new Intent(ProductsActivity.this, ProductDetailActivity.class);
-                    startActivity(detailProductIntent);
+                /*Intent detailProductIntent = new Intent(ProductsActivity.this, ProductDetailActivity.class);
+                detailProductIntent.putExtra("key", productsList.get(i).getId());
+                startActivity(detailProductIntent);*/
             }
-        });*/
+        });
+        btnBepchien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     private void AnhXa() {
@@ -75,6 +97,8 @@ public class ProductsActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbarLoaiMonAn);
         productsList = new ArrayList<>();
         myRef = FirebaseDatabase.getInstance().getReference();
+        mStorageRef = FirebaseStorage.getInstance().getReference();
+        btnBepchien = findViewById(R.id.buttonBepchien);
     }
 
     private void getProductsFirebase() {
