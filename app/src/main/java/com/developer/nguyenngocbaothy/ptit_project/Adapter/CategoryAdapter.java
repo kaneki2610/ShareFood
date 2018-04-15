@@ -1,4 +1,4 @@
-package com.example.dell.ptit_doan;
+package com.developer.nguyenngocbaothy.ptit_project.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.developer.nguyenngocbaothy.ptit_project.Model.Category;
 import com.developer.nguyenngocbaothy.ptit_project.R;
+import com.developer.nguyenngocbaothy.ptit_project.Reference.FirebaseReference;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
@@ -17,21 +21,23 @@ import java.util.List;
  * Created by HOME on 23-Feb-18.
  */
 
-public class MonAnAdapter extends BaseAdapter {
+public class CategoryAdapter extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private List<MonAn> monAnList;
+    private List<Category> categoryList;
+    private StorageReference mStorageRef;
 
-    public MonAnAdapter(Context context, int layout, List<MonAn> monAnList) {
+    public CategoryAdapter(Context context, int layout, List<Category> categoryList) {
         this.context = context;
         this.layout = layout;
-        this.monAnList = monAnList;
+        this.categoryList = categoryList;
+        this.mStorageRef = FirebaseStorage.getInstance().getReference();
     }
 
     @Override
     public int getCount() {
-        return monAnList.size();
+        return categoryList.size();
     }
 
     @Override
@@ -44,7 +50,7 @@ public class MonAnAdapter extends BaseAdapter {
         return 0;
     }
 
-    private class ViewHolder{
+    private class ViewHolder {
         ImageView image;
         TextView txtTen;
     }
@@ -52,21 +58,23 @@ public class MonAnAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
-        if(convertView == null){
+        if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(layout, null);
             holder = new ViewHolder();
-            holder.txtTen = (TextView) convertView.findViewById(R.id.textTen);
-            holder.image = (ImageView) convertView.findViewById(R.id.imageIcon);
+            holder.txtTen = (TextView) convertView.findViewById(R.id.textTenloai);
+            holder.image = (ImageView) convertView.findViewById(R.id.imageHinhloai);
             convertView.setTag(holder);
-        }else {
+
+        } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        MonAn monan  = monAnList.get(position);
-        holder.txtTen.setText(monan.getTenMonAn());
-        holder.image.setImageResource(monan.getHinh());
+        Category category = categoryList.get(position);
+        holder.txtTen.setText(category.getName());
 
+        FirebaseReference.setImageFromFireBase(mStorageRef.child("Categories").child(category.getImage()),
+                category.getImage(), ".png", holder.image);
         return convertView;
     }
 }

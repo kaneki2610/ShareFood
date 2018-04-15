@@ -13,7 +13,7 @@
   <ImageView
       android:layout_marginTop="30dp"
       android:layout_gravity="center"
-      android:src="@drawable/pho_03"
+      android:src="@drawable/item340_03"
       android:layout_width="160dp"
       android:layout_height="160dp" />
    <TextView

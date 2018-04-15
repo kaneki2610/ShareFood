@@ -13,7 +13,7 @@
         <TextView
             android:fontFamily="@font/font_franchise"
             android:paddingLeft="40dp"
-            android:id="@+id/textTen"
+            android:id="@+id/textTenloai"
             android:textColor="#fff"
             android:layout_marginTop="24dp"
             android:layout_gravity=""
@@ -25,8 +25,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ImageView
-            android:id="@+id/imageIcon"
-            android:src="@drawable/item_14"
+            android:id="@+id/imageHinhloai"
+            android:src="@drawable/item340_03"
             android:layout_width="100dp"
             android:layout_height="100dp" />
 

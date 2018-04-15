@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ShareFood.iml" filepath="$PROJECT_DIR$/ShareFood.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ptit_doan.iml" filepath="$PROJECT_DIR$/ptit_doan.iml" />
+      <module fileurl="file://C:\Users\tranh\Documents\GitHub\ShareFood\ptit_doan.iml" filepath="C:\Users\tranh\Documents\GitHub\ShareFood\ptit_doan.iml" />
     </modules>
   </component>
 </project>
