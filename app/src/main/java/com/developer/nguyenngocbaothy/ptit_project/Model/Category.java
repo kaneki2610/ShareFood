@@ -7,12 +7,17 @@ package com.developer.nguyenngocbaothy.ptit_project.Model;
 public class Category {
     private String id;
     private String name;
-    private int image;
+    private String image;
 
     public Category() {
     }
 
-    public Category(String id, String name, int image) {
+    public Category(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Category(String id, String name, String image) {
         this.id = id;
         this.name = name;
         this.image = image;
@@ -34,11 +39,11 @@ public class Category {
         this.name = name;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 }

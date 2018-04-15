@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 import com.developer.nguyenngocbaothy.ptit_project.Model.Product;
 import com.developer.nguyenngocbaothy.ptit_project.R;
+import com.developer.nguyenngocbaothy.ptit_project.Reference.FirebaseReference;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
@@ -23,12 +26,14 @@ public class ProductAdapter extends ArrayAdapter<Product> {
     Context context;
     int resource;
     List<Product> objects;
+    StorageReference mStorageRef;
 
     public ProductAdapter(@NonNull Context context, int resource, @NonNull List<Product> objects) {
         super(context, resource, objects);
         this.context = context;
         this.resource = resource;
         this.objects = objects;
+        this.mStorageRef = FirebaseStorage.getInstance().getReference();
     }
 
     private class ViewHolder {
@@ -52,8 +57,10 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         }
 
         Product pd = objects.get(position);
-        holder.img.setImageResource(pd.getImage());
         holder.txt.setText(pd.getName());
+
+        FirebaseReference.setImageFromFireBase(mStorageRef.child("Products").child(pd.getImage()),
+                pd.getImage(), ".png", holder.img);
 
         return convertView;
     }

@@ -26,7 +26,7 @@
             android:layout_height="wrap_content" />
         <ImageView
             android:id="@+id/imageHinhloai"
-            android:src="@drawable/item_14"
+            android:src="@drawable/item340_03"
             android:layout_width="100dp"
             android:layout_height="100dp" />
 

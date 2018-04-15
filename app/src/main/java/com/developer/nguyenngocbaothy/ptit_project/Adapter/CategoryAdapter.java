@@ -6,11 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.developer.nguyenngocbaothy.ptit_project.Model.Category;
 import com.developer.nguyenngocbaothy.ptit_project.R;
+import com.developer.nguyenngocbaothy.ptit_project.Reference.FirebaseReference;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
@@ -24,11 +26,13 @@ public class CategoryAdapter extends BaseAdapter {
     private Context context;
     private int layout;
     private List<Category> categoryList;
+    private StorageReference mStorageRef;
 
     public CategoryAdapter(Context context, int layout, List<Category> categoryList) {
         this.context = context;
         this.layout = layout;
         this.categoryList = categoryList;
+        this.mStorageRef = FirebaseStorage.getInstance().getReference();
     }
 
     @Override
@@ -68,8 +72,9 @@ public class CategoryAdapter extends BaseAdapter {
 
         Category category = categoryList.get(position);
         holder.txtTen.setText(category.getName());
-        holder.image.setImageResource(category.getImage());
 
+        FirebaseReference.setImageFromFireBase(mStorageRef.child("Categories").child(category.getImage()),
+                category.getImage(), ".png", holder.image);
         return convertView;
     }
 }

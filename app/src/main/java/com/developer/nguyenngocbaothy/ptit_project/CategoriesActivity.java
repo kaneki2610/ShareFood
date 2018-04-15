@@ -17,8 +17,6 @@ import android.widget.ListView;
 
 import com.developer.nguyenngocbaothy.ptit_project.Adapter.CategoryAdapter;
 import com.developer.nguyenngocbaothy.ptit_project.Model.Category;
-import com.developer.nguyenngocbaothy.ptit_project.Model.Product;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,6 +32,7 @@ public class CategoriesActivity extends AppCompatActivity {
     CategoryAdapter adapter;
     Toolbar toolbar;
     DatabaseReference myRef;
+    final String TAG = "CategoriesActivity";
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -55,10 +54,6 @@ public class CategoriesActivity extends AppCompatActivity {
     }
 
     private void SuKien() {
-        /*myRef.child("Products").push().setValue(new Product("0", "-L9xiWYcdCvYYpEKxhHZ", "Mắm chưng", R.drawable.chacalavong_03));
-        myRef.child("Products").push().setValue(new Product("1", "-L9xiWYcdCvYYpEKxhHZ", "Bún bò huế", R.drawable.bunbohue_03));
-        myRef.child("Products").push().setValue(new Product("2", "-L9xiWYcdCvYYpEKxhHZ", "Bánh hỏi", R.drawable.banhhoi_03));
-        myRef.child("Products").push().setValue(new Product("3", "-L9xiWYcdCvYYpEKxhHZ", "Phở gà", R.drawable.banhcanhghe_03));*/
         lvMonAn.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -77,14 +72,23 @@ public class CategoriesActivity extends AppCompatActivity {
     }
 
     void getCategoriesFirebase() {
-        /*myRef.child("Categories").push().setValue(new Category("0", "Món Việt",R.drawable.item_11));
-        myRef.child("Categories").push().setValue(new Category("1", "Món Á",R.drawable.item_14));
-        myRef.child("Categories").push().setValue(new Category("2", "Món Âu",R.drawable.item_16));
-        myRef.child("Categories").push().setValue(new Category("3", "Món tráng miệng",R.drawable.item_03));*/
+        /*myRef.child("Categories").removeValue();
+        myRef.child("Products").removeValue();
+        myRef.child("Categories").push().setValue(new Category("0", "Món Việt", "banhcanhcua_03.png"));
+        myRef.child("Categories").push().setValue(new Category("1", "Món Á","bonuonglalot_03.png"));
+        myRef.child("Categories").push().setValue(new Category("2", "Món Âu","bunbo_03.png"));
+        myRef.child("Categories").push().setValue(new Category("3", "Món tráng miệng","comtam_03.png"));
+        myRef.child("Products").push().setValue(new Product("0", "0", "Mắm chưng"," item340_03.png"));
+        myRef.child("Products").push().setValue(new Product("1", "0", "Bún bò huế","phalau_03.png"));
+        myRef.child("Products").push().setValue(new Product("2", "0", "Bánh hỏi","pho_03.png"));
+        myRef.child("Products").push().setValue(new Product("4", "0", "Bánh căn","banhmi_03.png"));
+        myRef.child("Products").push().setValue(new Product("5", "0", "Cơm chiên dương châu","banhdap_03.png"));
+        myRef.child("Products").push().setValue(new Product("6", "0", "Gà chiên","chaca_03.png"));*/
+
         myRef.child("Categories").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.d("getCategoriesFirebase", dataSnapshot.getChildren().toString());
+                Log.d(TAG, "getCategoriesFirebase: success!");
                 Iterable<DataSnapshot> iterable = dataSnapshot.getChildren();
                 for (DataSnapshot item : iterable) {
                     Category cate = item.getValue(Category.class);
@@ -95,7 +99,7 @@ public class CategoriesActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.w("getCategoriesFirebase", "Failed to read value.", databaseError.toException());
+                Log.e(TAG, "getCategoriesFirebase: Failed to read value. ", databaseError.toException());
             }
         });
     }

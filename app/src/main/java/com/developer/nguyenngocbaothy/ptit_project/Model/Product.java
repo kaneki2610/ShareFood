@@ -10,12 +10,18 @@ public class Product {
     private String id;
     private String parent_id;
     private String name;
-    private int image;
+    private String image;
 
     public Product() {
     }
 
-    public Product(String id, String parent_id, String name, int image) {
+    public Product(String id, String parent_id, String name) {
+        this.id = id;
+        this.parent_id = parent_id;
+        this.name = name;
+    }
+
+    public Product(String id, String parent_id, String name, String image) {
         this.id = id;
         this.parent_id = parent_id;
         this.name = name;
@@ -44,11 +50,11 @@ public class Product {
         this.name = name;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 }
